@@ -17,9 +17,17 @@
         const data = await result.json();
         json = data;
         console.log(data);
+        MostrarDatos();
     }
 
-    
+    function MostrarDatos(){
+        const root = document.querySelector(".root");
+        let contenido = "";
+        for(let i = 0; i < json.length; i++){
+            contenido += "<div>"+"<h2>"+json[i].nombre+"</h2>"+"<p>"+json[i].email+"</p>"+"</div>"
+        }
+        root.innerHTML = contenido;
+    }
 
 </script>
 </html>
